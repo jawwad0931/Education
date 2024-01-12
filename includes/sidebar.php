@@ -13,13 +13,23 @@
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
         <li class="nav-item" style="font-size:25px;">
-          <a href="index.php" class="nav-link">
+          <a href="panel.php" class="nav-link">
             <p class="">Dashboard</p>
           </a>
         </li>
         <li class="nav-item">
-          <a href="index.php" class="nav-link">
+          <a href="panel.php" class="nav-link">
             <p class="text">Admin Panel</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="Register.php" class="nav-link">
+            <p class="text">Student Record</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="Admincourse.php" class="nav-link">
+            <p class="text">Courses Update</p>
           </a>
         </li>
       </ul>

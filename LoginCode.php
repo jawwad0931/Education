@@ -12,19 +12,19 @@ if (isset($_POST['Login'])) {
             $id = $row['Id'];
             $UserName = $row['UserName'];
             $Password = $row['Password'];
-            $role_as = $row['role_as'];
+            // $role_as = $row['role_as'];
         }
-        $_SESSION['auth'] = "$role_as";
+        $_SESSION['auth'] = true;
         $_SESSION['auth_user'] = [
             'id' => $id,
             'username' => $UserName,
             'password' => $Password,
         ];
         $_SESSION['status'] = 'Login Successful';
-        header("Location: index.php");
+        header("Location: Dashboard.php");
     } else {
-        $_SESSION['status'] = 'Access Denied Something went wrong';
-        header("Location: UserLogin.php");
+        $_SESSION['status'] = 'Your are not admin!!! Access denied';
+        header("Location: panel.php");
     }
 }
 ?>

@@ -5,6 +5,7 @@
 session_start();
 include('Config/db.php');
 
+
 // Inserting data into the database
 if (isset($_POST['submit'])) {
     $Name = $_POST['Name'];
@@ -48,7 +49,7 @@ if (isset($_POST['logoutbtn'])) {
     session_destroy();
     unset($_SESSION['auth']);
     unset($_SESSION['auth_user']);
-    header('location: UserLogin.php');
+    header('location: panel.php');
     exit(0);
 }
 ?>

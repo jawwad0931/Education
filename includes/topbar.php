@@ -6,7 +6,7 @@
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="../index.php" class="nav-link">Home</a>
+      <a href="../panel.php" class="nav-link">Home</a>
     </li>
   </ul>
 
@@ -27,12 +27,12 @@
             echo $_SESSION['auth_user']['username'];
             // var_dump($_SESSION);
           } else {
-            echo 'Not Login';
+            echo '<script>window.location.href = "panel.php";</script>';  
           }
           ?>
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="index.php">Back Home</a>
+          <a class="dropdown-item" href="panel.php">Back Home</a>
           <form action="code.php" method="post">
             <button type='submit' name='logoutbtn' class='dropdown-item'>Logout</button>
           </form>

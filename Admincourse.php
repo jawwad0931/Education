@@ -38,41 +38,39 @@ include('includes/topbar.php');
     <div class="card bg-light">
       <div class="row m-3">
         <div class="col-6">
-          <h4>Registered Students Here</h4>
+          <h4>Update Course Here</h4>
         </div>
         <div class="col-6">
           <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          Add New Student
+          Add New Course
         </button>
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Course</h1>
         </div>
         <div class="modal-body">
           <!-- Form -->
-          <form Action="code.php" method="POST">
-            <label for="name">Student Name:</label>
-            <input type="text" id="name" name="Name" class="form-control" required>
+          <form Action="AdmincourseCode.php" method="POST" enctype="multipart/form-data">
+            <label for="Upload Image">Upload Image:</label>
+            <input type="file" id="Upload Image" name="course_pic" class="form-control" required>
 
-            <label for="father-name">Father Name:</label>
-            <input type="text" id="name" name="FatherName" class="form-control" required>
+            <label for="course_name">Update Course:</label>
+            <input type="text" id="course_name" name="course_name" class="form-control" required>
 
-            <label for="email">Phone Number:</label>
-            <input type="number" id="email" name="PhoneNumber" class="form-control" required>
+            <label for="course_status">Status:</label>
+            <select id="course_status" name="course_status" class="form-control" required>
+                <option value="available">Available</option>
+                <option value="not_available">Not Available</option>
+            </select>
 
-            <label for="email">Class:</label>
-            <input type="number" id="Class" name="Class" class="form-control" required>
-
-            <label for="email">Fees:</label>
-            <input type="number" id="Fees" name="Fees" class="form-control" required>
             <!-- Add other form elements as needed -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+              <button type="submit" class="btn btn-primary" name="submit_course">Course Submit</button>
             </div>
           </form>
           <!-- End of Form -->
@@ -93,62 +91,45 @@ include('includes/topbar.php');
         <div class="table-responsive">
           <table  id="mytable" class="table table-dark table-striped table-bordered table-hover">
             <thead>
-              <tr>
+              <!-- <tr>
                 <th>Student Name</th>
                 <th>Father Name</th>
                 <th>Phone Number</th>
                 <th>Class</th>
                 <th>Fees</th>
                 <th>Action</th>
-              </tr>
+              </tr> -->
             </thead>
             <tbody>
               <!-- Fetch all the data from database -->
               <?php
-              if ($conn) {
-                $slt = "SELECT * FROM `studenttable`";
-                $query = mysqli_query($conn, $slt);
-                if ($query) {
-                  while ($row = mysqli_fetch_assoc($query)) {
-                    $Id = $row['Id'];
-                    $Name = $row['Name'];
-                    $FatherName = $row['FatherName'];
-                    $PhoneNumber = $row['PhoneNumber'];
-                    $Class = $row['Class'];
-                    $Fees = $row['Fees'];
-                    echo "<tr>
-                            <td>$Name</td>
-                            <td>$FatherName</td>
-                            <td>$PhoneNumber</td>
-                            <td>$Class</td>
-                            <td>$Fees</td>
-                            <td>
-                            <a href='delete.php?deleteid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
-                            </td>
-                            </tr>";
+            //   if ($conn) {
+            //     $slt = "SELECT * FROM `studenttable`";
+            //     $query = mysqli_query($conn, $slt);
+            //     if ($query) {
+            //       while ($row = mysqli_fetch_assoc($query)) {
+            //         $Id = $row['Id'];
+            //         $Name = $row['Name'];
+            //         $FatherName = $row['FatherName'];
+            //         $PhoneNumber = $row['PhoneNumber'];
+            //         $Class = $row['Class'];
+            //         $Fees = $row['Fees'];
+            //         echo "<tr>
+            //                 <td>$Name</td>
+            //                 <td>$FatherName</td>
+            //                 <td>$PhoneNumber</td>
+            //                 <td>$Class</td>
+            //                 <td>$Fees</td>
+            //                 <td>
+            //                 <a href='delete.php?deleteid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
+            //                 </td>
+            //                 </tr>";
                             
-                  }
-                }
-              }
+            //       }
+            //     }
+            //   }
               ?>
             <tbody>
-              <?php 
-                // Calculate and display total fees
-                $sumQuery = "SELECT SUM(Fees) AS totalFees FROM studenttable";
-                $result = mysqli_query($conn, $sumQuery);
-
-                if ($result) {
-                    $row = mysqli_fetch_assoc($result);
-                    $totalFees = $row['totalFees'];
-                    echo "<tr>
-                            <td colspan='4'><b>Total Fees</b></td>
-                            <td><b>$totalFees</b></td>
-                            <td></td>
-                          </tr>";
-                } else {
-                    echo "Error calculating total fees: " . mysqli_error($conn);
-                }
-              ?>
           </table>
         </div>
       </div>
