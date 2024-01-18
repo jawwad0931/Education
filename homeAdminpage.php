@@ -38,7 +38,7 @@ include('includes/topbar.php');
     <div class="card bg-light">
       <div class="row m-3">
         <div class="col-6">
-          <h4 class="fw-light">Update Course Here</h4>
+          <h4 class="fw-light">Update FAQ Here</h4>
         </div>
         <div class="col-6">
           <!-- Button trigger modal -->
@@ -50,27 +50,21 @@ include('includes/topbar.php');
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add Course</h1>
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add New FAQ</h1>
         </div>
         <div class="modal-body">
           <!-- Form -->
-          <form Action="AdmincourseCode.php" method="POST" enctype="multipart/form-data">
-            <label for="Upload Image">Upload Image:</label>
-            <input type="file" id="Upload Image" name="course_pic" class="form-control" required>
+          <form Action="homeAdminCode.php" method="POST">
+            <label for="faqQuest">Update Question</label>
+            <input type="text" id="faqQuest" name="faqQuest" class="form-control" required>
 
-            <label for="course_name">Update Course:</label>
-            <input type="text" id="course_name" name="course_name" class="form-control" required>
-
-            <label for="course_status">Status:</label>
-            <select id="course_status" name="course_status" class="form-control" required>
-                <option value="Available">Available</option>
-                <option value="Not Available">Not Available</option>
-            </select>
+            <label for="faqAnswer">Update Answer</label>
+            <input type="text" id="faqAnswer" name="faqAnswer" class="form-control" required>
 
             <!-- Add other form elements as needed -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" name="submit_course">Course Submit</button>
+              <button type="submit" class="btn btn-primary" name="submit_FAQ">Submit FAQ</button>
             </div>
           </form>
           <!-- End of Form -->
@@ -92,27 +86,24 @@ include('includes/topbar.php');
           <table  id="mytable" class="table table-dark table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <th>Image</th>
-                <th>Course Name</th>
-                <th>Course Status</th>
+                <th>Change Question</th>
+                <th>Change Answer</th>
               </tr>
             </thead>
             <tbody>
               <!-- Fetch all the data from database -->
               <?php
               if ($conn) {
-                $slt = "SELECT * FROM `courses_detail`";
+                $slt = "SELECT * FROM `faq`";
                 $query = mysqli_query($conn, $slt);
                 if ($query) {
                   while ($row = mysqli_fetch_assoc($query)) {
                     $Id = $row['Id'];
-                    $course_pic = $row['course_pic'];
-                    $course_name = $row['course_name'];
-                    $course_status = $row['course_status'];
+                    $faqQuest = $row['faqQuest'];
+                    $faqAnswer = $row['faqAnswer'];
                     echo "<tr>
-                            <td> $course_pic</td>
-                            <td>$course_name</td>
-                            <td>$course_status</td>
+                            <td>$faqQuest</td>
+                            <td>$faqAnswer</td>
                             <td>
                               <a href='AdminCourseDelete.php?deleteCourseid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
                             </td>

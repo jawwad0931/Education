@@ -16,16 +16,16 @@ include "frontinclude/front-topbar.php";
                     //     '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
                     //     unset($_SESSION['login_Session']);
                     // }                   
-                if (isset($_SESSION['login_Session'])) {
-                    // Output the Bootstrap 5 alert using the session message
-                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    if (isset($_SESSION['login_Session'])) {
+                        // Output the Bootstrap 5 alert using the session message
+                        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
                             ' . $_SESSION['login_Session'] . '
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>';
-                    // Unset the session variable to clear the message
-                    unset($_SESSION['login_Session']);
-                }
-                ?>
+                        // Unset the session variable to clear the message
+                        unset($_SESSION['login_Session']);
+                    }
+                    ?>
                 </div>
             </div>
         </div>
@@ -144,122 +144,29 @@ include "frontinclude/front-topbar.php";
         </div>
     </section>
     <!-- =========================== END OF COURSES =========================== -->
-
-
-
-
+               
     <section class="faqs">
         <h2> Frequently Asked Questions</h2>
         <div class="container faqs_container">
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
-
-
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
-
-
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
-
-
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
-
-
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
-
-
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
-
-
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
-
-
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
-
-
-            <article class="faq">
-                <div class="faq_icon"> <i class="uil uil-plus"></i></div>
-                <div class="question_answer">
-                    <h4>How do I know the right courses for me?</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto rerum vero omnis iure
-                        repellendus consequatur quam accusamus, quibusdam quis mollitia autem exercitationem porro
-                        ducimus quia explicabo? Veritatis minima tempora at.</p>
-                </div>
-            </article>
+            <?php include('Config/db.php');
+            $FaqQuery = "SELECT * FROM `faq`";
+            $checkfaq = mysqli_query($conn, $FaqQuery);
+            if (!$checkfaq) {
+                die(mysqli_error($conn));
+            } else {
+                while ($fetchfaq = mysqli_fetch_assoc($checkfaq)) {
+                    echo '<article class="faq">';
+                    echo '<div class="faq_icon"> <i class="uil uil-plus"></i></div>';
+                    echo '<div class="question_answer">';
+                    echo '<h4>' . $fetchfaq["faqQuest"] . '</h4>';
+                    echo '<p>' . $fetchfaq["faqAnswer"] . '</p>';
+                    echo '</div>';
+                    echo '</article>';
+                }
+            }
+            ?>
         </div>
     </section>
-
     <!-- ================================= END OF FAQS ======================================= -->
 
 
@@ -342,7 +249,7 @@ include "frontinclude/front-topbar.php";
         </article>
     </div>
     <div class="swiper-pagination"></div>
-</section> -->
+    </section> -->
     <!-- ================================= END OF TESTIMONIALS======================================= -->
 
     <?php

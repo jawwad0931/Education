@@ -53,8 +53,8 @@
  <!-- DataTables CSS CDN -->
  <script src="Asset/dist/js/datatables.min.js"></script>
 <script> 
-   $(document).ready(function() {
-        $('#mytable').DataTable();
-    });
+  //  $(document).ready(function() {
+  //       $('#mytable').DataTable();
+  //   });
     // $.widget.bridge('uibutton', $.ui.button)
 </script>

@@ -32,6 +32,11 @@
             <p class="text">Courses Update</p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="homeAdminpage.php" class="nav-link">
+            <p class="text">FAQ Updates</p>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

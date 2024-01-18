@@ -28,7 +28,7 @@ include('includes/topbar.php');
           unset($_SESSION['status']);
         }
         ?>
-          <!-- small box -->
+          <!-- For Registration banner -->
           <div class="small-box bg-info">
             <div class="inner p-4">
               <h4>Registration</h4>
@@ -38,6 +38,28 @@ include('includes/topbar.php');
               <i class="ion ion-person-add"></i>
             </div>
             <a href="Register.php" class="small-box-footer">Click <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+          <!-- For Courses banner -->
+          <div class="small-box bg-primary">
+            <div class="inner p-4">
+              <h4>Courses</h4>
+              <p>Courses Update Details</p>
+            </div>
+            <div class="icon">
+              <i class="ion-ios-bookmarks"></i>
+            </div>
+            <a href="Admincourse.php" class="small-box-footer">Click <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+          <!-- For FAQ banner -->
+          <div class="small-box bg-danger">
+            <div class="inner p-4">
+              <h4>FAQ</h4>
+              <p>Daily Updates Your FAQ Questions</p>
+            </div>
+            <div class="icon">
+              <i class="ion-help"></i>
+            </div>
+            <a href="homeAdminpage.php" class="small-box-footer">Click <i class="fas fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </div>

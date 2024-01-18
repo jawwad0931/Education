@@ -23,7 +23,7 @@
       <div class="dropdown">
         <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
           <?php
-          if (isset($_SESSION['auth'])) {
+          if (isset($_SESSION['auth_user'])) {
             echo $_SESSION['auth_user']['username'];
             // var_dump($_SESSION);
           } else {

@@ -399,6 +399,11 @@ footer {
 
   /* ===================== NAVBAR =========== */
 
+  /* .ulcontent{
+    width: 100%;
+    justify-content: end;
+  } */
+
   nav button {
     display: inline-block;
     background: transparent;

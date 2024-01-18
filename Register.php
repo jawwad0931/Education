@@ -42,44 +42,46 @@ include('includes/topbar.php');
         </div>
         <div class="col-6">
           <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          Add New Student
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-        </div>
-        <div class="modal-body">
-          <!-- Form -->
-          <form Action="code.php" method="POST">
-            <label for="name">Student Name:</label>
-            <input type="text" id="name" name="Name" class="form-control" required>
+          <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">
+            Add New Student
+          </button>
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                </div>
+                <div class="modal-body">
+                  <!-- Form -->
+                  <form Action="code.php" method="POST">
+                    <label for="name">Student Name:</label>
+                    <input type="text" id="name" name="Name" class="form-control" required>
 
-            <label for="father-name">Father Name:</label>
-            <input type="text" id="name" name="FatherName" class="form-control" required>
+                    <label for="father-name">Father Name:</label>
+                    <input type="text" id="name" name="FatherName" class="form-control" required>
 
-            <label for="email">Phone Number:</label>
-            <input type="number" id="email" name="PhoneNumber" class="form-control" required>
+                    <label for="email">Phone Number:</label>
+                    <input type="number" id="email" name="PhoneNumber" class="form-control" required>
 
-            <label for="email">Class:</label>
-            <input type="number" id="Class" name="Class" class="form-control" required>
+                    <label for="email">Class:</label>
+                    <input type="number" id="Class" name="Class" class="form-control" required>
 
-            <label for="email">Fees:</label>
-            <input type="number" id="Fees" name="Fees" class="form-control" required>
-            <!-- Add other form elements as needed -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                    <label for="email">Fees:</label>
+                    <input type="number" id="Fees" name="Fees" class="form-control" required>
+                    <!-- Add other form elements as needed -->
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+                    </div>
+                  </form>
+                  <!-- End of Form -->
+                </div>
+              </div>
             </div>
-          </form>
-          <!-- End of Form -->
-        </div>
-      </div>
-    </div>
-  </div>
+          </div>
 
         </div>
       </div>
@@ -91,7 +93,7 @@ include('includes/topbar.php');
       <div class="col-12">
         <!-- /Table -->
         <div class="table-responsive">
-          <table  id="mytable" class="table table-dark table-striped table-bordered table-hover">
+          <table id="mytable" class="table table-dark table-striped table-bordered table-hover">
             <thead>
               <tr>
                 <th>Student Name</th>
@@ -99,6 +101,8 @@ include('includes/topbar.php');
                 <th>Phone Number</th>
                 <th>Class</th>
                 <th>Fees</th>
+                <th>Toggle</th>
+                <th>status</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -116,38 +120,68 @@ include('includes/topbar.php');
                     $PhoneNumber = $row['PhoneNumber'];
                     $Class = $row['Class'];
                     $Fees = $row['Fees'];
+                    $status = $row['status'];
                     echo "<tr>
-                            <td>$Name</td>
-                            <td>$FatherName</td>
-                            <td>$PhoneNumber</td>
-                            <td>$Class</td>
-                            <td>$Fees</td>
-                            <td>
-                            <a href='delete.php?deleteid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
-                            </td>
-                            </tr>";
-                            
+                      <td>$Name</td>
+                      <td>$FatherName</td>
+                      <td>$PhoneNumber</td>
+                      <td>$Class</td>
+                      <td>$Fees</td>
+
+                      <td>";  
+                      if ($row['status'] == 1)  
+                          echo 'Active'; 
+                      else 
+                          echo 'Inactive';                         
+                      echo"</td>
+
+                     
+                   
+
+
+                      <td>";
+                      // Generate a link based on the value of $row['status']
+                      if ($row['status'] == "1") {
+                          echo "<a href='deactivate.php?Id=" . $row['Id'] . "' class='btn btn-sm w-100 d-flex align-items-center justify-content-center glow-btn-2'>Unpaid</a>";
+                      } else {
+                          echo "<a href='activate.php?Id=" . $row['Id'] . "' class='btn btn-sm w-100 d-flex align-items-center justify-content-center glow-btn'>Paid</a>";
+                      }
+                      echo "</td> 
+
+
+
+
+
+
+
+
+                                         
+                      <td>
+                      <a href='delete.php?deleteid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
+                      </td>
+                    </tr>";
+
                   }
                 }
               }
               ?>
             <tbody>
-              <?php 
-                // Calculate and display total fees
-                $sumQuery = "SELECT SUM(Fees) AS totalFees FROM studenttable";
-                $result = mysqli_query($conn, $sumQuery);
+              <?php
+              // Calculate and display total fees
+              $sumQuery = "SELECT SUM(Fees) AS totalFees FROM studenttable";
+              $result = mysqli_query($conn, $sumQuery);
 
-                if ($result) {
-                    $row = mysqli_fetch_assoc($result);
-                    $totalFees = $row['totalFees'];
-                    echo "<tr>
+              if ($result) {
+                $row = mysqli_fetch_assoc($result);
+                $totalFees = $row['totalFees'];
+                echo "<tr>
                             <td colspan='4'><b>Total Fees</b></td>
                             <td><b>$totalFees</b></td>
                             <td></td>
                           </tr>";
-                } else {
-                    echo "Error calculating total fees: " . mysqli_error($conn);
-                }
+              } else {
+                echo "Error calculating total fees: " . mysqli_error($conn);
+              }
               ?>
           </table>
         </div>
@@ -156,5 +190,11 @@ include('includes/topbar.php');
   </div>
 </div>
 </div>
+<!-- DataTable  -->
+<script> 
+   $(document).ready(function() {
+        $('#mytable').DataTable();
+    });
+</script>
 <!-- Footer include file -->
 <?php include('includes/footer.php'); ?>
