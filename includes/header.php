@@ -4,6 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Title is type here -->
   <title>Justice Law Firm</title>
+  <!-- faviocn -->
+  <link rel="icon" type="image/x-icon" href="./Asset/dist/img/logo2.png">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome CDN -->
@@ -24,6 +26,7 @@
   <!-- Index.php -->
   <link rel="stylesheet" href="Asset/dist/css/footer.css">
   <link rel="stylesheet" href="Asset/dist/css/glowbtn.css">
+  <link rel="stylesheet" href="Asset/dist/css/print.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="Asset/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Daterange picker -->

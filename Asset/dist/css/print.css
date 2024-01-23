@@ -1,0 +1,19 @@
+
+/* This css for hiding print button when click */
+@media print {
+    .no-print {
+        display: none;
+    }
+}
+
+@media print{
+    .no-submit{
+        display: none;
+    }
+}
+
+@media print{
+    #printing{
+        background-color: yellow;
+    }
+}

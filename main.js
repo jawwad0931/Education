@@ -44,3 +44,6 @@ faqs.forEach(faq => {
 
 // closeBtn.addEventListener('click',closeNav);
 
+
+
+

@@ -38,41 +38,7 @@ include('includes/topbar.php');
     <div class="card bg-light">
       <div class="row m-3">
         <div class="col-6">
-          <h4 class="fw-light">Update FAQ Here</h4>
-        </div>
-        <div class="col-6">
-          <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-          Add New Course
-        </button>
-        <!-- Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">Add New FAQ</h1>
-        </div>
-        <div class="modal-body">
-          <!-- Form -->
-          <form Action="homeAdminCode.php" method="POST">
-            <label for="faqQuest">Update Question</label>
-            <input type="text" id="faqQuest" name="faqQuest" class="form-control" required>
-
-            <label for="faqAnswer">Update Answer</label>
-            <input type="text" id="faqAnswer" name="faqAnswer" class="form-control" required>
-
-            <!-- Add other form elements as needed -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" name="submit_FAQ">Submit FAQ</button>
-            </div>
-          </form>
-          <!-- End of Form -->
-        </div>
-      </div>
-    </div>
-  </div>
-
+          <h4 class="fw-light">View Your Contacts</h4>
         </div>
       </div>
     </div>
@@ -86,31 +52,39 @@ include('includes/topbar.php');
           <table  id="mytable" class="table table-dark table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <th>(FAQ) Question</th>
-                <th>(FAQ) Answer</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <!-- Fetch all the data from database -->
               <?php
               if ($conn) {
-                $slt = "SELECT * FROM `faq`";
+                $slt = "SELECT * FROM `contact`";
                 $query = mysqli_query($conn, $slt);
                 if ($query) {
                   while ($row = mysqli_fetch_assoc($query)) {
                     $Id = $row['Id'];
-                    $faqQuest = $row['faqQuest'];
-                    $faqAnswer = $row['faqAnswer'];
+                    $FirstName = $row['FirstName'];
+                    $LastName = $row['LastName'];
+                    $Email = $row['Email'];
+                    $Message = $row['Message'];
                     echo "<tr>
-                            <td>$faqQuest</td>
-                            <td>$faqAnswer</td>
+                            <td>$FirstName</td>
+                            <td>$LastName</td>
+                            <td>$Email</td>
+                            <td>$Message</td>
                             <td>
-                              <a href='AdminCourseDelete.php?deleteCourseid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
+                              <a href='delete.php?deleteContactid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
                             </td>
                           </tr>";     
                   }
                 }
               }
+              mysqli_close($conn);
               ?>
             <tbody>
           </table>

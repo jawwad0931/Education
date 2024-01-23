@@ -61,6 +61,50 @@ include('includes/topbar.php');
             </div>
             <a href="homeAdminpage.php" class="small-box-footer">Click <i class="fas fa-arrow-circle-right"></i></a>
           </div>
+          <!-- For ContactUs Messages -->
+          <div class="small-box bg-warning">
+            <div class="inner p-4">
+              <h4>Client Contact</h4>
+              <p>View Your Client Contact</p>
+            </div>
+            <div class="icon">
+              <i class="ion-android-contacts"></i>
+            </div>
+            <a href="contactAdmin.php" class="small-box-footer">Click <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+          <!-- For Courses Category -->
+          <div class="small-box bg-success">
+            <div class="inner p-4">
+              <h4>Courses Categories</h4>
+              <p>View Your Courses category</p>
+            </div>
+            <div class="icon">
+              <i class="ion-ios-bookmarks"></i>
+            </div>
+            <a href="category.php" class="small-box-footer">Click <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+          <!-- For Change Team Member -->
+          <div class="small-box bg-dark">
+            <div class="inner p-4">
+              <h4>Change Member</h4>
+              <p>Replace and Change you team Member</p>
+            </div>
+            <div class="icon">
+              <i class="ion-person-add text-muted"></i>
+            </div>
+            <a href="teamAdmin.php" class="small-box-footer">Click <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
+           <!-- For New Student Registration Form -->
+           <div class="small-box bg-secondary">
+            <div class="inner p-4">
+              <h4>Registration Form</h4>
+              <p>Print Registration Form For New Student</p>
+            </div>
+            <div class="icon">
+              <i class="ion-document-text text-light"></i>
+            </div>
+            <a href="newstudentform.php" class="small-box-footer">Click <i class="fas fa-arrow-circle-right"></i></a>
+          </div>
         </div>
       </div>
       <!-- /.row -->

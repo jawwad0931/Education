@@ -54,73 +54,40 @@ include "frontinclude/front-topbar.php";
   </section>
 
   <!-- =========================== END OF ACHIEVEMENTS =========================== -->
-
-  <section class="team">
+    <section class="team">
     <h2>Meet Our Team</h2>
     <div class="container team_container">
+      <?php 
+        include ("Config/db.php");
+        $slt = "SELECT * FROM `teammember`";
+        $member_query = mysqli_query($conn, $slt);
 
-
-      <article class="team_member">
-        <div class="team_member-image">
-          <img src="./images/tm5.jpg" alt="">
-        </div>
-        <div class="team_member-info">
-          <h4>Ruth Shockings</h4>
-          <p>Expert Tutor</p>
-        </div>
-        <div class="team_member-socials">
-          <a href="https://instagram.com"><i class="uil uil-instagram"></i></a>
-          <a href="https://twitter.com"><i class="uil uil-twitter-alt"></i></a>
-          <a href="https://linkedin.com"><i class="uil uil-linkedin-alt"></i></a>
-        </div>
-      </article>
-
-      <article class="team_member">
-        <div class="team_member-image">
-          <img src="./images/tm6.jpg" alt="">
-        </div>
-        <div class="team_member-info">
-          <h4>Edem Quist</h4>
-          <p>Expert Tutor</p>
-        </div>
-        <div class="team_member-socials">
-          <a href="https://instagram.com"><i class="uil uil-instagram"></i></a>
-          <a href="https://twitter.com"><i class="uil uil-twitter-alt"></i></a>
-          <a href="https://linkedin.com"><i class="uil uil-linkedin-alt"></i></a>
-        </div>
-      </article>
-
-      <article class="team_member">
-        <div class="team_member-image">
-          <img src="./images/tm7.jpg" alt="">
-        </div>
-        <div class="team_member-info">
-          <h4>Lila James</h4>
-          <p>Expert Tutor</p>
-        </div>
-        <div class="team_member-socials">
-          <a href="https://instagram.com"><i class="uil uil-instagram"></i></a>
-          <a href="https://twitter.com"><i class="uil uil-twitter-alt"></i></a>
-          <a href="https://linkedin.com"><i class="uil uil-linkedin-alt"></i></a>
-        </div>
-      </article>
-
-      <article class="team_member">
-        <div class="team_member-image">
-          <img src="./images/tm8.jpg" alt="">
-        </div>
-        <div class="team_member-info">
-          <h4>Menz Gold</h4>
-          <p>Expert Tutor</p>
-        </div>
-        <div class="team_member-socials">
-          <a href="https://instagram.com"><i class="uil uil-instagram"></i></a>
-          <a href="https://twitter.com"><i class="uil uil-twitter-alt"></i></a>
-          <a href="https://linkedin.com"><i class="uil uil-linkedin-alt"></i></a>
-        </div>
-      </article>
+        if($member_query){
+          while($row = mysqli_fetch_assoc($member_query)){
+            echo '<article class="team_member">';
+            echo'<div class="team_member-image">';
+              echo'<img src="images/'. $row['MemberPhoto'] .'" height="200px" width="80px" alt="">';
+            echo'</div>';
+            echo'<div class="team_member-info">';
+              echo'<h5 class="pt-3">' . $row['MemberName'] . '</h5>';
+              echo'<p class="pt-3">' . $row['MemberExperties'] . '</p>';
+            echo'</div>';
+            echo'<div class="team_member-socials">';
+              echo'<a href="https://instagram.com"><i class="uil uil-instagram"></i></a>';
+              echo'<a href="https://twitter.com"><i class="uil uil-twitter-alt"></i></a>';
+             echo'<a href="https://linkedin.com"><i class="uil uil-linkedin-alt"></i></a>';
+            echo'</div>';
+            echo'</article>';
+           
+          }
+        }else{
+          die("Error Show Data not show Something Went wrong" . mysqli_error($conn));
+        }
+        mysqli_close($conn);
+      ?>
     </div>
   </section>
+
 
 
   <!-- =========================== END OF TEAM SECTION =========================== -->

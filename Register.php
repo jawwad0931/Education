@@ -127,35 +127,25 @@ include('includes/topbar.php');
                       <td>$PhoneNumber</td>
                       <td>$Class</td>
                       <td>$Fees</td>
-
                       <td>";  
+                      // Check If status is 1 it could be active and when it is 0 is called Inactive
                       if ($row['status'] == 1)  
                           echo 'Active'; 
                       else 
                           echo 'Inactive';                         
                       echo"</td>
-
-                     
-                   
-
-
+                      
+                      
                       <td>";
                       // Generate a link based on the value of $row['status']
+                      // when click Activate and Deactivate Button its code in activate.php and deactivate.php page code run
                       if ($row['status'] == "1") {
                           echo "<a href='deactivate.php?Id=" . $row['Id'] . "' class='btn btn-sm w-100 d-flex align-items-center justify-content-center glow-btn-2'>Unpaid</a>";
                       } else {
                           echo "<a href='activate.php?Id=" . $row['Id'] . "' class='btn btn-sm w-100 d-flex align-items-center justify-content-center glow-btn'>Paid</a>";
                       }
                       echo "</td> 
-
-
-
-
-
-
-
-
-                                         
+  
                       <td>
                       <a href='delete.php?deleteid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
                       </td>

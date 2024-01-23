@@ -32,8 +32,8 @@ include "frontinclude/front-topbar.php";
         <!-- =========================== Session end=========================== -->
         <div class="container header_container">
             <div class="header_left">
-                <h1>Enhance skills, empower student journey.</h1>
-                <a href="courses.php" class="btn btn-primary my-3"> Get Started</a>
+                <h1 class="text-sm">Enhance skills, empower student journey.</h1>
+                <a href="courses.php" class="btn btn-primary btn-sm my-3"> Get Started</a>
             </div>
 
             <div class="header-right">
@@ -50,50 +50,32 @@ include "frontinclude/front-topbar.php";
         <div class="container categories_container">
             <div class="categories_left">
                 <h1>Categories</h1>
-                <p>
+                <p class="text-sm">
                     For those who dream of shaping the future through technology, the Tech Trailblazer category awaits.
                     From coding marvels to mastering the latest software, each achievement in this category marks a
                     significant step toward becoming a tech-savvy trailblazer. Show the world your coding prowess and
                     innovation in the ever-evolving tech landscape.
                 </p>
-                <a href="#" class="btn">Learn More</a>
+                <a href="courses.php" class="btn">View Courses</a>
             </div>
             <div class="categories_right">
-                <article class="category">
-                    <span class="category_icon"><i class="uil uil-bitcoin-circle"></i></span>
-                    <h5>Blockchain</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, officiis!</p>
-                </article>
-
-                <article class="category">
-                    <span class="category_icon"><i class="uil uil-palette"></i></i></span>
-                    <h5>Graphic Design</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, officiis!</p>
-                </article>
-
-                <article class="category">
-                    <span class="category_icon"><i class="uil uil-dollar-sign-alt"></i></i></span>
-                    <h5>Finance</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, officiis!</p>
-                </article>
-
-                <article class="category">
-                    <span class="category_icon"><i class="uil uil-megaphone"></i></span>
-                    <h5>Marketing</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, officiis!</p>
-                </article>
-
-                <article class="category">
-                    <span class="category_icon"><i class="uil uil-music"></i></span>
-                    <h5>Music</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, officiis!</p>
-                </article>
-
-                <article class="category">
-                    <span class="category_icon"><i class="uil uil-coins"></i></span>
-                    <h5>Business</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, officiis!</p>
-                </article>
+                <?php 
+                include "Config/db.php";
+                $sltCategory = "SELECT * FROM `coursecategory`";
+                $sltQuery = mysqli_query($conn, $sltCategory);
+                if(!$sltQuery){
+                    die(mysqli_error($conn));
+                }else{
+                while($CategoryRow = mysqli_fetch_assoc($sltQuery)){
+                echo'<article class="category">';
+                    echo'<span class=""><img src="images/' . $CategoryRow['CourseIcon'] . '" style="height:50px; width:50px;" alt=""></span>';
+                    echo'<h5>' . $CategoryRow['CourseName'] . '</h5>';
+                    echo'<p>' . $CategoryRow['CourseDescription'] . '</p>';
+                echo'</article>';
+                }
+                }
+                mysqli_close($conn);
+                ?>
             </div>
         </div>
     </section>
@@ -101,7 +83,7 @@ include "frontinclude/front-topbar.php";
     <!-- =========================== END OF CATEGORIES =========================== -->
 
 
-
+<!-- 
     <section class="courses">
         <div class="container courses_container">
             <article class="course">
@@ -142,7 +124,7 @@ include "frontinclude/front-topbar.php";
                 </div>
             </article>
         </div>
-    </section>
+    </section> -->
     <!-- =========================== END OF COURSES =========================== -->
                
     <section class="faqs">
@@ -169,6 +151,23 @@ include "frontinclude/front-topbar.php";
     </section>
     <!-- ================================= END OF FAQS ======================================= -->
 
+    <div class="container">
+      <div class="row d-flex align-items-center justify-content-center">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="content rounded m-3 p-5">
+                <h3 class="text-center text-light m-3">Famous Quotes Messages</h3>
+                <hr class="hr mb-4">
+                <blockquote class="text-center text-light" id="quotes">Loading...</blockquote>
+                <p class="text-right text-light" id="authors">Loading...</p>
+                <div class="text-center">
+                <button class="btn btn-primary btn-sm" onclick="quoteBtn(Apiurl)">Click Generate</button>
+                <!-- <button class="btn btn-primary btn-block" onclick="tweet()">Twitter</button> -->
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>     
+    <!-- ================================= END OF QUOTES ======================================= -->
 
     <!-- <section class="container testimonials_container mySwiper">
     <h2>Student's Testimonials</h2>
@@ -255,6 +254,8 @@ include "frontinclude/front-topbar.php";
     <?php
     include "frontinclude/frontfooter.php";
     ?>
+    <!-- For quotes generator -->
+    <script src="home.js"></script>
 </body>
 
 </html>

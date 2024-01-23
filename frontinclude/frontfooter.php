@@ -3,7 +3,7 @@
         <div class="row p-3">
             <div class="col-lg-4 col-sm-12 p-1">
                 <h5>About Education First</h5>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium sint cumque error nulla aspernatur voluptate eos, odit magni repellendus amet!</p>
+                <p style="width:348px;">Ignite your potential with Education First—your gateway to quality learning. From innovative courses to personalized growth, we're committed to shaping your success. Join us on a journey of education that opens doors to endless possibilities.</p>
             </div>
             <div class="col-lg-3 col-sm-6 p-0">       
                     <h4>Permalinks</h4>
@@ -11,7 +11,8 @@
                     <li><a href="about.php" class="text-decoration-none">About</a></li>
                     <li><a href="courses.php" class="text-decoration-none">Course</a></li>
                     <li><a href="contact.php" class="text-decoration-none">Contact</a></li>
- 
+                    <li><a href="fillform.php" class="text-decoration-none">Form</a></li>
+
             </div>
             <div class="col-lg-5 col-sm-6 pl-0 mt-3">       
                 <h4 class="">Contact Us</h4>
@@ -55,3 +56,4 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+

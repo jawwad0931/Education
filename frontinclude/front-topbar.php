@@ -3,8 +3,8 @@ session_start();
 include 'frontinclude/frontheader.php';
 ?>
 
-<nav class="navbar navbar-expand-sm w-100" style="background-color:#6c63ff;height:50px;">
-    <a class="navbar-brand fw-bold text-light" href="#">Education<span class="fw-light text-light">First</span></a>
+<nav class="navbar navbar-expand-sm w-100" style="background-color:#6c63ff;height:60px;">
+    <a class="navbar-brand d-flex text-light" href="home.php"><img class="rounded-circle mr-2" style="height:40px; width:40px;" src="./images/logo2.png" /><span class="fw-light text-light" style="">Education First</span></a>
     <button class="navbar-toggler border" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon bg-light text-dark"></span>
@@ -22,6 +22,9 @@ include 'frontinclude/frontheader.php';
             </li>    
             <li class="nav-item">
                 <a class="nav-link text-light" href="contact.php">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-light" href="fillform.php">Form</a>
             </li>
             <li class="nav-item dropdown mr-5">
                 <a class="nav-link dropdown-toggle text-light mr-4" href="#" id="dropdownId" data-toggle="dropdown"

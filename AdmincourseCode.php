@@ -1,5 +1,7 @@
 <?php 
     include "Config/db.php";
+?>
+<?php
     if(isset($_POST['submit_course'])){
         $course_pic = $_FILES["course_pic"]["name"];
         $tempname = $_FILES["course_pic"]["tmp_name"];

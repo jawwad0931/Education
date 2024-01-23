@@ -23,3 +23,9 @@ NotesContainer.addEventListener("click",(e)=>{
         })
     }
 })
+
+
+// For Registration Form Validations
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+
+

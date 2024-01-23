@@ -1,6 +1,8 @@
 <?php 
     session_start();
     include 'Config/db.php';
+?>
+<?php
     if(isset($_POST['send'])){
         $FirstName = $_POST['FirstName'];
         $LastName = $_POST['LastName'];

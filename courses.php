@@ -13,11 +13,11 @@
     </style>
   </head>
   <body>
-    <!-- =========================== END OF NAVBAR =========================== -->
+    <!-- =========================== START COURSES =========================== -->
     <section class="courses">
     <div class="banner">
         <div class="inner_banner m-3">
-            <h1 class="text-center fw-light p-3">Video Course Services</h1>
+            <h1 class="text-center fw-light p-3">New Courses Here</h1>
             <hr>
         </div>
     </div>
@@ -45,6 +45,29 @@
     </div>
     </section>
     <!-- =========================== END OF COURSES =========================== -->
+
+
+    <!-- =========================== START VIDEO COURSES =========================== -->
+    <section class="courses">
+    <div class="banner">
+        <div class="inner_banner m-3">
+            <h1 class="text-center fw-light p-3">Video Course Here</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h1>Working in process.............</h1>
+            <div class="col-6 border">
+                Video 1
+            </div>
+            <div class="col-6 border">
+                Video 2
+            </div>
+        </div>
+    </div>
+    </section>
+    <!-- =========================== END VIDEO COURSES =========================== -->
     <?php 
     include "frontinclude/frontfooter.php";
     ?>

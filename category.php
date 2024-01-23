@@ -38,7 +38,7 @@ include('includes/topbar.php');
     <div class="card bg-light">
       <div class="row m-3">
         <div class="col-6">
-          <h4 class="fw-light">Update Course Here</h4>
+          <h4 class="fw-light">Change Course category Here</h4>
         </div>
         <div class="col-6">
           <!-- Button trigger modal -->
@@ -54,24 +54,20 @@ include('includes/topbar.php');
         </div>
         <div class="modal-body">
           <!-- Form -->
-          <form Action="AdmincourseCode.php" method="POST" enctype="multipart/form-data">
-            <label for="Upload Image">Upload Image:</label>
-            <input type="file" id="Upload Image" name="course_pic" class="form-control" required>
+          <form Action="categoryCode.php" method="POST" enctype="multipart/form-data">
+            <label for="CourseIcon">CourseIcon:</label>
+            <input type="file" id="CourseIcon" name="CourseIcon" class="form-control" required>
 
-            <label for="course_name">Update Course:</label>
-            <input type="text" id="course_name" name="course_name" class="form-control" required>
+            <label for="CourseName">Update Course:</label>
+            <input type="text" id="CourseName" name="CourseName" class="form-control" required>
 
-            <label for="course_status">Status:</label>
-            <select id="course_status" name="course_status" class="form-control" required>
-                <option value="Available">Available</option>
-                <option value="Not Available">Not Available</option>
-                <option value="Upcoming">UpComing</option>
-            </select>
+            <label for="CourseDescription">Status:</label>
+            <input type="text" id="CourseDescription" name="CourseDescription" class="form-control" required>
 
             <!-- Add other form elements as needed -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" name="submit_course">Course Submit</button>
+              <button type="submit" class="btn btn-primary" name="Submit_Category">Course Submit</button>
             </div>
           </form>
           <!-- End of Form -->
@@ -93,29 +89,30 @@ include('includes/topbar.php');
           <table  id="mytable" class="table table-dark table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <th>Image</th>
+                <th>Course Icon</th>
                 <th>Course Name</th>
-                <th>Course Status</th>
+                <th>Course Decription</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
               <!-- Fetch all the data from database -->
               <?php
               if ($conn) {
-                $slt = "SELECT * FROM `courses_detail`";
+                $slt = "SELECT * FROM `coursecategory`";
                 $query = mysqli_query($conn, $slt);
                 if ($query) {
                   while ($row = mysqli_fetch_assoc($query)) {
                     $Id = $row['Id'];
-                    $course_pic = $row['course_pic'];
-                    $course_name = $row['course_name'];
-                    $course_status = $row['course_status'];
+                    $CourseIcon = $row['CourseIcon'];
+                    $CourseName = $row['CourseName'];
+                    $CourseDescription = $row['CourseDescription'];
                     echo "<tr>
-                            <td>$course_pic</td>
-                            <td>$course_name</td>
-                            <td>$course_status</td>
+                            <td>$CourseIcon</td>
+                            <td>$CourseName</td>
+                            <td>$CourseDescription</td>
                             <td>
-                              <a href='delete.php?deleteCourseid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
+                              <a href='delete.php?deleteCourseCategoryid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
                             </td>
                           </tr>";     
                   }

@@ -6,7 +6,7 @@
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="../panel.php" class="nav-link">Home</a>
+      <a href="home.php" class="nav-link">Home</a>
     </li>
   </ul>
 
@@ -23,7 +23,7 @@
       <div class="dropdown">
         <button class="btn btn-outline-dark dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
           <?php
-          if (isset($_SESSION['auth_user'])) {
+          if (isset($_SESSION['auth'])) {
             echo $_SESSION['auth_user']['username'];
             // var_dump($_SESSION);
           } else {
