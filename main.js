@@ -23,26 +23,27 @@ faqs.forEach(faq => {
     })
 })
 
-// Show / hide the nav menu
+// About.php Animated Counter
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    let count = 0;
 
-// const menu = document.querySelector(".nav_menu");
-// const menuBtn = document.querySelector("#open-menu-btn");
-// const closeBtn = document.querySelector("#close-menu-btn");
+    const animation = setInterval(() => {
+        count++;        
+        element.textContent = count;
+        if (count === target) {
+            clearInterval(animation);
+        }
+    }, 8); // Adjust the interval to control the animation speed
+}
 
-// menuBtn.addEventListener('click',()=>{
-//     menu.style.display = "flex";
-//     closeBtn.style.display = "inline-block";
-//     menuBtn.style.display = "none";
-// })
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+        animateCounter(counter);
+    });
+});
 
-// close nav menu
-// const closeNav = ()=> {
-//     menu.style.display = "none";
-//     closeBtn.style.display = "none";
-//     menuBtn.style.display = "inline-block";
-// }
-
-// closeBtn.addEventListener('click',closeNav);
 
 
 

@@ -42,7 +42,7 @@ include('includes/topbar.php');
         </div>
         <div class="col-6">
           <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary float-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        <button type="button" class="btn btn-success float-right" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
           Add New Course
         </button>
         <!-- Modal -->

@@ -155,7 +155,7 @@ include "frontinclude/front-topbar.php";
       <div class="row d-flex align-items-center justify-content-center">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="content rounded m-3 p-5">
-                <h3 class="text-center text-light m-3">Famous Quotes Messages</h3>
+                <h3 class="text-center text-light m-3">Famous Quotes For Students</h3>
                 <hr class="hr mb-4">
                 <blockquote class="text-center text-light" id="quotes">Loading...</blockquote>
                 <p class="text-right text-light" id="authors">Loading...</p>

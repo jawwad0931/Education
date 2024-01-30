@@ -25,27 +25,50 @@ include "frontinclude/front-topbar.php";
           educational journey!
         </p>
         <div class="acheivements_cards">
-          <article class="acheivement_card">
-            <span class="acheivement_icon">
-              <i class="uil uil-video"></i>
-            </span>
-            <h3>450+</h3>
-            <p>Courses</p>
-          </article>
+
+
+
+
+
+          <!-- --------------------------------------------------------Test------------------------------------------------------------- -->
+          <?php 
+          include("Config/db.php");
+          // Here Select count use to view all registered students
+          $slt = "SELECT COUNT(*) AS total_students FROM `form`";
+          $stdquery = mysqli_query($conn, $slt);
+
+          if($stdquery){
+              $row = mysqli_fetch_assoc($stdquery);
+              $total_students = $row['total_students'];
+              echo '<article class="acheivement_card">
+                  <span class="acheivement_icon">
+                      <i class="uil uil-users-alt"></i>
+                  </span>
+                  <h3 class="counter" data-target="'.$total_students.'">'.$total_students.'</h3>
+                  <p>Registered Students</p>
+              </article>';
+          }else{
+              die("Error Show Data not show Something Went wrong" . mysqli_error($conn));
+          }
+          mysqli_close($conn);
+          ?>
+
+          <!-- --------------------------------------------------------Test------------------------------------------------------------- -->
+
 
           <article class="acheivement_card">
             <span class="acheivement_icon">
-              <i class="uil uil-users-alt"></i>
+              <i class="uil uil-books"></i>
             </span>
-            <h3>79,000+</h3>
-            <p>Students</p>
+            <h3 class="counter" data-target="30"></h3>
+            <p>Courses</p>
           </article>
 
           <article class="acheivement_card">
             <span class="acheivement_icon">
               <i class="uil uil-trophy"></i>
             </span>
-            <h3>27+</h3>
+            <h3 class="counter" data-target="50"></h3>
             <p>Awards</p>
           </article>
         </div>

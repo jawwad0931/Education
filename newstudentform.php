@@ -17,7 +17,7 @@
     <div class="container-fluid">
         <div class="row d-flex align-items-center justify-content-center my-5">
             <div class="col-lg-6">
-                <form class="row needs-validation border w-100 p-2" novalidate>
+            <form action="fillformCode.php" method="POST" class="row needs-validation border w-100 p-2" novalidate enctype="multipart/form-data">
                     <div class="row py-3">
                         <div class="col-lg-12 pb-4 d-flex align-items-center justify-content-start">
                             <img src="Asset/dist/img/logo2.png" class="border rounded-circle" style="height:50px; width:50px;" alt="">
@@ -166,7 +166,7 @@
                     </div>
                     <div class="col-12 pt-2 d-flex">
                         <div class="no-submit">
-                            <button class="btn btn-primary"  type="submit">Submit form</button>
+                            <input class="btn btn-primary" name="fill_form"  type="submit" value="Submit form">
                         </div>
                         <!-- <button class="btn btn-danger" onclick="window.print()">Print</button> -->
                         <div class="no-print">

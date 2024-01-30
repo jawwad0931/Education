@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Title is type here -->
-  <title>Justice Law Firm</title>
+  <title>Education First</title>
   <!-- faviocn -->
   <link rel="icon" type="image/x-icon" href="./Asset/dist/img/logo2.png">
   <!-- Google Font: Source Sans Pro -->

@@ -148,6 +148,7 @@ include('includes/topbar.php');
   
                       <td>
                       <a href='delete.php?deleteid=$Id' class=''><i class='ion-trash-a text-danger ml-3' style='font-size:25px'></i></a>
+                      <a href='RecordUpdate.php?updateid=$Id' class=''><i class='ion-edit text-success ml-3' style='font-size:20px'></i></a>
                       </td>
                     </tr>";
 
